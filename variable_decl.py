@@ -59,6 +59,8 @@ omega_t = CellVariable(name=r"$\omega_t$", mesh=mesh)
 # Collision Frequencies
 nu_ei = CellVariable(name=r"$\nu_{ei}$", mesh=mesh)
 nu_ii = CellVariable(name=r"$\nu_{ii}$", mesh=mesh)
+
+# Collisionalities
 nu_ai = CellVariable(name=r"$\nu_{*i}$", mesh=mesh)
 nu_ae = CellVariable(name=r"$\nu_{*e}$", mesh=mesh)
 
@@ -88,23 +90,19 @@ Gamma_bulk = CellVariable(name=r"$\Gamma_i^{\pi\parallel}$", mesh=mesh)
 g_ol = CellVariable(name=r"$g^{ol}$", mesh=mesh)
 Gamma_ol = CellVariable(name=r"$\Gamma_i^{ol}$", mesh=mesh)
 
-Z_transient_coeff = CellVariable(name=r"$\hat{epsilon}$", mesh=mesh)
-Z_diffusion_coeff = CellVariable(name=r"$\hat{mu}$", mesh=mesh)
-
 
 variable_dictionary = {\
 		'x': x, 'density': density, 'temperature': temperature, 'Z': Z,\
 		'Diffusivity': Diffusivity, 'n_0': n_0, 'v_Ti': v_Ti, 'v_Te': v_Te,\
 		'rho_pi': rho_pi, 'rho_pe': rho_pe, 'omega_bi': omega_bi,\
-		'omega_be': omega_be, 'omega_t': omega_t, 'nu_ei': nu_ei,
+		'omega_be': omega_be, 'w_bi': w_bi, 'omega_t': omega_t, 'nu_ei': nu_ei,
 		'nu_ii': nu_ii, 'nu_ai': nu_ai, 'nu_ae': nu_ae,\
 		'ionization_rate': ionization_rate, 'cx_rate': cx_rate,\
 		'D_an': D_an, 'g_n_an': g_n_an, 'g_T_an': g_T_an, 'g_Z_an': g_Z_an,\
 		'Gamma_an': Gamma_an, 'g_n_cx': g_n_cx, 'g_T_cx': g_T_cx,\
 		'g_Z_cx': g_Z_cx, 'Gamma_cx': Gamma_cx, 'g_ol': g_ol,\
 		'Gamma_ol': Gamma_ol, 'D_bulk': D_bulk, 'Gamma_bulk': Gamma_bulk,\
-		'plasma_disp': plasma_disp, 'Z_transient_coeff': Z_transient_coeff,\
-		'Z_diffusion_coeff': Z_diffusion_coeff\
+		'plasma_disp': plasma_disp,\
 	}
 
 

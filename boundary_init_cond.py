@@ -1,11 +1,11 @@
 """
 	Declares the initial conditions, including whether it
-	starts in L-- or H--mode. These things are entire
-	calculated by hand. If one changes the size of the
-	domain (L), these must be recalculated.
+	starts in L-- or H--mode. The ones not by Paquay are entire
+	estimated by hand. If one changes the size of the
+	domain (L), these potentially may need to be recalculated.
 
-	Also declares the boundary conditions of the state
-	variables, as a function.
+	This file also declares the boundary conditions, as a python
+	function. The edge boundary for Z may need consideration.
 """
 
 from variable_decl import *
