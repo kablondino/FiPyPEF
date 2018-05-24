@@ -11,13 +11,16 @@ Make sure you download the Python2 version.
 
 Upon completing the installation of conda, follow the instructions from FiPy to install the software:
 [Installation Instructions](https://www.ctcms.nist.gov/fipy/INSTALLATION.html "Instructions")
+
 Be sure to test the installation as well.
 
 Please use git to manage any updates.
 In order to get this code, simply execute the following command in the location of your choice.
 ```
-	git clone https://github.com/kablondino/FiPyPEF.git
+git clone https://github.com/kablondino/FiPyPEF.git
 ```
+
+It has not been tested in the [Jupyter notebook](http://jupyter.org/ "Jupyter").
 
 ## Use
 The main routine of solving the system is in the `solving_taylor.py` and `solving_flux.py` files.
