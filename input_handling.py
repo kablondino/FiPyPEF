@@ -2,34 +2,34 @@
 	This file deals with all of the inputs for the system. The current set
 	of inputs are the following:
 
-	nx:				int		The number of grid points
-	total_timeSteps:int		The total number of time steps
-	timeStep:		float	The overall dt in solving
-	res_tol			float	The tolerance of the residual
-	Gamma_c			float	The particle flux from the core
-	q_c				float	The heat flux from the core
-	alpha_sup		float	Suppression coeff in Stap's diffusivity
-	beta			float	Exponent value in Stap's diffusivity
-	shear_a1		float	The a1 coefficient in the Flow-Shear diffusivity
-	shear_a2		float	... a2 .........................................
-	shear_a3		float	... a3 .........................................
-	numerical_parameter:	string		The set of predetermined parameters
-	D_choice:		string	The model of the diffusivity
+	nx:					int		The number of grid points
+	total_timeSteps:	int		The total number of time steps
+	timeStep:			float	The overall dt in solving
+	res_tol				float	The tolerance of the residual
+	Gamma_c				float	The particle flux from the core
+	q_c					float	The heat flux from the core
+	alpha_sup			float	Suppression coeff in Stap's diffusivity
+	beta				float	Exponent value in Stap's diffusivity
+	shear_a1			float	The a1 coefficient in the Flow-Shear diffusivity
+	shear_a2			float	... a2 .........................................
+	shear_a3			float	... a3 .........................................
+	numerical_choice:	string	The set of predetermined parameters
+	D_choice:			string	The model of the diffusivity
 	paquay_init_conds:	bool	Start with Paquay's initial conditions or linear?
-	initial_H_mode:	bool	Start in L-- or H--mode?
-	taylor_model:	bool	Which Z-equation model? 'False' is flux model.
-	generate_plots	bool	Should the plots be made?
-	plot_title:		string	The title of the plot; can be formatted
-	ploty_max:		float	The maximum y-value on the plot
-	aux_plots:		bool	Turns on specified auxiliary plots
-	aux_vars:		list	List of strings for auxiliary plots
-	aux_titles:		list	Title of the aux plots
-	aux_ymin:		float	Minimum y value of the aux plots
-	aux_ymax:		float	Maximum y value of the aux plots
-	save_directory: string	The name of the saving directory, from current
-							directory being run.
-	save_plots:		bool	Should the plots be saved?
-	save_TSVs:		bool	Should TSV files be generated and saves?
+	initial_H_mode:		bool	Start in L-- or H--mode?
+	taylor_model:		bool	Which Z-equation model? 'False' is flux model.
+	generate_plots		bool	Should the plots be made?
+	plot_title:			string	The title of the plot; can be formatted
+	ploty_max:			float	The maximum y-value on the plot
+	aux_plots:			bool	Turns on specified auxiliary plots
+	aux_vars:			list	List of strings for auxiliary plots
+	aux_titles:			list	Title of the aux plots
+	aux_ymin:			float	Minimum y value of the aux plots
+	aux_ymax:			float	Maximum y value of the aux plots
+	save_directory: 	string	The name of the saving directory, from current
+								directory being run.
+	save_plots:			bool	Should the plots be saved?
+	save_TSVs:			bool	Should TSV files be generated and saves?
 
 	Each possible input also has a default value, if nothing is set.
 
