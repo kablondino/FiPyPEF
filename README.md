@@ -14,3 +14,6 @@ The main routine of solving the system is in the `solving_taylor.py` and `solvin
 On the command line, run `python solving_taylor.py CONFIG_FILE.py` with the appropriate configuration file.
 Read through the example configuration file `taylor_config.py` to see all of the options available.
 
+Currently, there are 6 total nonambipolar fluxes implemented.
+Read `Model_Notes.html` in a browser to see the forms of all the plasma parameters and fluxes without needing to sift through code.
+
