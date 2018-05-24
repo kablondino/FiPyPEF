@@ -1,0 +1,32 @@
+# Paraview and data files
+*.vtu
+*.pvd
+*.tsv
+*.dat
+*.txt
+
+# Swap files
+*.swp
+
+# iPython / Jupyter notebooks
+*.ipynb
+__init__.py
+*.pyc
+
+# Image and video files
+*.png
+*.jpg
+*.bmp
+*.mp4
+*.avi
+*.mkv
+
+# Zipped files and archives
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+
+# Configuration files for FiPy
+*config*.py
+
