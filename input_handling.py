@@ -75,10 +75,9 @@ if type(getattr(config, 'paquay_init_conds', None)) != bool:
 if (type(getattr(config, 'Gamma_c', None)) != float and
         type(getattr(config, 'Gamma_c', None)) != int):
     try:
-        config.Gamma_c = int(input(
-            "The particle flux from the core Gamma_c is not chosen properly. "
-            "Choose a floating-point value: "
-            ))
+        config.Gamma_c = int(input("The particle flux from the core Gamma_c "
+                                   "is not chosen properly. Choose a "
+                                   "floating-point value: "))
     except (EOFError, NameError, SyntaxError) as e:
         config.Gamma_c = -4.0 / 5.0
         print "Gamma_c defaulted to -0.8"
@@ -86,10 +85,9 @@ if (type(getattr(config, 'Gamma_c', None)) != float and
 if (type(getattr(config, 'q_c', None)) != float and
         type(getattr(config, 'Gamma_c', None)) != int):
     try:
-        config.Gamma_c = int(input(
-            "The heat flux from the core q_c is not chosen properly. "
-            "Choose a floating-point value: "
-            ))
+        config.Gamma_c = int(input("The heat flux from the core q_c is not "
+                                   "chosen properly. Choose a floating-point "
+                                   "value: "))
     except (EOFError, NameError, SyntaxError) as e:
         config.q_c = config.Gamma_c * 5.0
         print "q_c defaulted to 5.0 * Gamma_c"
@@ -107,10 +105,9 @@ if (getattr(config, 'numerical_choice', "").lower() not in parameter_sets or
 if (getattr(config, 'D_choice', "").lower() not in diffusivity_models or
         type(getattr(config, 'D_choice', None)) != str):
     try:
-        config.D_choice = raw_input(
-                "The diffusivity model is not properly chosen. Choose from "
-                "the following: Zohm, Weymiens_L, Staps, Flow-Shear -> "
-                )
+        config.D_choice = raw_input("The diffusivity model is not properly "
+                                    "chosen. Choose from the following: Zohm, "
+                                    "Weymiens_L, Staps, Flow-Shear -> ")
 
         if str(config.D_choice).lower() not in diffusivity_models:
             raise IndexError()
@@ -125,10 +122,9 @@ if config.D_choice.lower() == "d_staps":
     if (type(getattr(config, 'alpha_sup', None)) != int and
             type(getattr(config, 'alpha_sup', None)) != float):
         try:
-            config.alpha_sup = float(input(
-                "The suppression coefficient in the diffusivity is not set. "
-                "Enter an integer or float: "
-                ))
+            config.alpha_sup = float(input("The suppression coefficient in "
+                                           "the diffusivity is not set. Enter "
+                                           "an integer or float: "))
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.alpha_sup = 0.5
@@ -138,10 +134,9 @@ if config.D_choice.lower() == "d_staps":
     if (type(getattr(config, 'beta', None)) != int and
             type(getattr(config, 'beta', None)) != float):
         try:
-            config.beta = float(input(
-                "The exponent of the electric field shear is improperly set. "
-                "Enter a floating-point number or integer: "
-                ))
+            config.beta = float(input("The exponent of the electric field "
+                                      "shear is improperly set. Enter a "
+                                      "floating-point number or integer: "))
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.beta = 2.0
@@ -161,11 +156,11 @@ if (config.D_choice.lower() == "d_shear" or
             type(getattr(config, 'shear_a3', None)) != int and
             type(getattr(config, 'shear_a3', None)) != float):
         try:
-            config.shear_a1, config.shear_a2, config.shear_a3 = float(input(
-                "One of the parameters of the flow-shear diffusivity model "
-                "is improperly set. Enter 3 floating-point numbers, "
-                "separated by commas: "
-                ).split(","))
+            config.shear_a1, config.shear_a2, config.shear_a3 \
+                = float(input("One of the parameters of the flow-shear "
+                              "diffusivity model is improperly set. Enter 3 "
+                              "floating-point numbers, separated by commas: "
+                        ).split(","))
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.shear_a1, config.shear_a2, config.shear_a3 = 1.0, 0.0, 0.5
@@ -179,10 +174,8 @@ if ((type(getattr(config, 'nx', None)) != int and
         type(getattr(config, 'nx', None)) != float) or
         getattr(config, 'nx', None) <= 0):
     try:
-        config.nx = int(input(
-            "nx (Grid number) not properly defined. "
-            "Enter a positive integer value: "
-            ))
+        config.nx = int(input("nx (Grid number) not properly defined. Enter a "
+                              "positive integer value: "))
 
         if config.nx <= 0:
             raise ValueError
@@ -224,10 +217,9 @@ if ((type(getattr(config, 'total_timeSteps', None)) != int and
         type(getattr(config, 'total_timeSteps', None)) != float) or
         getattr(config, 'total_timeSteps', None) <= 0.0):
     try:
-        config.total_timeSteps = int(input(
-            "Total number of time steps not properly defined. "
-            "Enter integer value: "
-            ))
+        config.total_timeSteps = int(input("Total number of time steps not "
+                                           "properly defined. Enter integer "
+                                           "value: "))
 
         if config.total_timeSteps <= 0:
             raise ValueError
@@ -247,10 +239,8 @@ if ((type(getattr(config, 'timeStep', None)) != float and
         type(getattr(config, 'timeStep', None))) or
         getattr(config, 'timeStep', None) <= 0.0):
     try:
-        config.timeStep = float(input(
-            "The time step size is not properly defined. "
-            "Enter floating-point value: "
-            ))
+        config.timeStep = float(input("The time step size is not properly "
+                                      "defined. Enter floating-point value: "))
 
         if config.timeStep <= 0.0:
             raise ValueError
@@ -274,10 +264,9 @@ if ((type(getattr(config, 'res_tol', None)) != float and
         type(getattr(config, 'res_tol', Non)) != int) or
         getattr(config, 'res_tol', None) <= 0.0):
     try:
-        config.res_tol = float(input(
-            "The residual tolerance is not properly set. "
-            "Enter a positive floating-point value: "
-            ))
+        config.res_tol = float(input("The residual tolerance is not properly "
+                                     "set. Enter a positive floating-point "
+                                     "value: "))
 
         if config.res_tol <= 0.0:
             raise ValueError
