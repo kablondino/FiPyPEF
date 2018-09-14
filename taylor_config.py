@@ -1,11 +1,11 @@
 """
-	This is an example configuration file. Read the other
-	source files to see what values get defaulted.
+    This is an example configuration file. Read the other
+    source files to see what values get defaulted.
 """
 
 # Particle and heat flux from the core
 Gamma_c = -0.8
-q_c = 5.0*Gamma_c
+q_c = 5.0 * Gamma_c
 
 # Number of cells
 nx = 200
@@ -51,9 +51,9 @@ numerical_choice = "Staps"
 
 # Plot details
 plot_title = "$D \sim 1 / [1 + 0.1 (Z)^2 + 0.25 (Z^\prime)^{2}]$"\
-		+"\n" + r"$\Gamma_c = {:.3g},\, T \,=\, {:d},\,$"\
-		.format(Gamma_c, total_timeSteps)\
-		+ r"$\Delta t \,=\, {:.3e}$".format(timeStep)
+    + "\n" + r"$\Gamma_c = {:.3g},\, T \,=\, {:d},\,$"\
+    .format(Gamma_c, total_timeSteps)\
+    + r"$\Delta t \,=\, {:.3e}$".format(timeStep)
 
 # Maximum x on the plots
 ploty_max = 5.2
@@ -76,4 +76,3 @@ save_plots = False
 save_TSVs = False
 
 save_directory = "SAVE_DIRECTORY"
-

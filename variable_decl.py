@@ -31,7 +31,7 @@ Z = CellVariable(name=r"$Z$", mesh=mesh, hasOld=True)
 
 Diffusivity = CellVariable(name=r"$D$", mesh=mesh, hasOld=True)
 
-U.setValue(density*temperature / (gamma - 1.0))
+U.setValue(density * temperature / (gamma - 1.0))
 
 
 # -------------- Other Variable Declarations --------------
@@ -92,18 +92,18 @@ Gamma_ol = CellVariable(name=r"$\Gamma_i^{ol}$", mesh=mesh)
 
 
 variable_dictionary = {
-        'x': x, 'density': density, 'temperature': temperature, 'Z': Z,
-        'Diffusivity': Diffusivity, 'n_0': n_0, 'v_Ti': v_Ti, 'v_Te': v_Te,
-        'rho_pi': rho_pi, 'rho_pe': rho_pe, 'omega_bi': omega_bi,
-        'omega_be': omega_be, 'w_bi': w_bi, 'omega_t': omega_t, 'nu_ei': nu_ei,
-        'nu_ii': nu_ii, 'nu_ai': nu_ai, 'nu_ae': nu_ae,
-        'ionization_rate': ionization_rate, 'cx_rate': cx_rate,
-        'D_an': D_an, 'g_n_an': g_n_an, 'g_T_an': g_T_an, 'g_Z_an': g_Z_an,
-        'Gamma_an': Gamma_an, 'g_n_cx': g_n_cx, 'g_T_cx': g_T_cx,
-        'g_Z_cx': g_Z_cx, 'Gamma_cx': Gamma_cx, 'g_ol': g_ol,
-        'Gamma_ol': Gamma_ol, 'D_bulk': D_bulk, 'Gamma_bulk': Gamma_bulk,
-        'plasma_disp': plasma_disp
-    }
+    'x': x, 'density': density, 'temperature': temperature, 'Z': Z,
+    'Diffusivity': Diffusivity, 'n_0': n_0, 'v_Ti': v_Ti, 'v_Te': v_Te,
+    'rho_pi': rho_pi, 'rho_pe': rho_pe, 'omega_bi': omega_bi,
+    'omega_be': omega_be, 'w_bi': w_bi, 'omega_t': omega_t, 'nu_ei': nu_ei,
+    'nu_ii': nu_ii, 'nu_ai': nu_ai, 'nu_ae': nu_ae,
+    'ionization_rate': ionization_rate, 'cx_rate': cx_rate,
+    'D_an': D_an, 'g_n_an': g_n_an, 'g_T_an': g_T_an, 'g_Z_an': g_Z_an,
+    'Gamma_an': Gamma_an, 'g_n_cx': g_n_cx, 'g_T_cx': g_T_cx,
+    'g_Z_cx': g_Z_cx, 'Gamma_cx': Gamma_cx, 'g_ol': g_ol,
+    'Gamma_ol': Gamma_ol, 'D_bulk': D_bulk, 'Gamma_bulk': Gamma_bulk,
+    'plasma_disp': plasma_disp
+}
 
 
 # Remove entire entry in aux plot details arrays if aux_vars is not a string

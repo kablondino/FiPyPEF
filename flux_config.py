@@ -1,5 +1,5 @@
 Gamma_c = -1.0e22
-q_c = 5.0e2*Gamma_c
+q_c = 5.0e2 * Gamma_c
 
 nx = 100
 
@@ -27,10 +27,9 @@ ploty_max = None
 aux_plots = True
 
 aux_vars = ['Gamma_ol', 'Gamma_an', 'Gamma_bulk', 'Gamma_cx']
-#aux_ymin = ['',0.0,0.0,'']
+# aux_ymin = ['',0.0,0.0,'']
 
 save_plots = False
-#save_TSVs = False
+# save_TSVs = False
 
 save_directory = "Short_Plots"
-

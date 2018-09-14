@@ -22,12 +22,12 @@ gamma = 5.0 / 3.0                              # Adiabatic index, monoatomic
 # ----------------- ASDEX-U Specifications ----------------
 a_v = 0.8                                      # Vertical minor radius
 a_h = 0.5                                      # Horizontal minor radius
-a_m = ((a_v**2 + a_h**2) / 2.0)**(1.0/2.0)     # Mean minor radius, in meters
+a_m = ((a_v**2 + a_h**2) / 2.0)**(1.0 / 2)     # Mean minor radius, in meters
 R = 1.65                                       # Major radius, in meters
 I_phi = 1.6e6                                  # Plasma current, in Amperes
 B_phi = 3.1                                    # Toroidal field, in Telsa
-B_theta = mu_0 * I_phi / (2*pi * a_m)          # Poloidal field, in Tesla
-B = (B_phi**2 + B_theta**2)**(1.0/2.0)         # Full field, in Tesla
+B_theta = mu_0 * I_phi / (2 * pi * a_m)        # Poloidal field, in Tesla
+B = (B_phi**2 + B_theta**2)**(1.0 / 2)         # Full field, in Tesla
 
 
 # ----------------- ITER Specifications -------------------
@@ -40,7 +40,7 @@ B = (B_phi**2 + B_theta**2)**(1.0/2.0)         # Full field, in Tesla
 
 
 aspect = a_m / R                               # Aspect Ratio
-q = aspect * B_phi/B_theta                     # q value
+q = aspect * B_phi / B_theta                   # q value
 
 
 # PRESET parameters for quick calculation, many of which are chosen by Staps
@@ -61,7 +61,7 @@ mu = 1.0 / 20.0
 
 # Minimum and maximum values of the particle diffusivity D
 D_max = 5.0
-D_min = 2.0/5.0
+D_min = 2.0 / 5.0
 
 # Transient coefficient in the Taylor-expanded model
 epsilon = 1.0 / 25.0
@@ -84,10 +84,10 @@ if config.numerical_choice.lower() is "paquay":
 elif config.numerical_choice.lower() is "staps":
     c_n = -1.1
     c_T = -0.9
-    a = 3.0/2.0
+    a = 3.0 / 2.0
     b = 2.0
     c = -1.0
-    Z_S = -3.0/2.0
+    Z_S = -3.0 / 2.0
 
 
 # For use in full flux model
