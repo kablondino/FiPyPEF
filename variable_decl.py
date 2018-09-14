@@ -1,10 +1,10 @@
 """
-	This file generates the 1D mesh and the 4 cell
-	state variables needed for the model (including Diffusivity).
+    This file generates the 1D mesh and the 4 cell
+    state variables needed for the model (including Diffusivity).
 
-	**It may be that Diffusivity should be declared as a FaceVariable.
-	It must be adjusted to the correct size when using it to calculate
-	different values.**
+    **It may be that Diffusivity should be declared as a FaceVariable.
+    It must be adjusted to the correct size when using it to calculate
+    different values.**
 """
 
 from fipy import Grid1D, CellVariable
@@ -16,8 +16,8 @@ from parameters import *
 # ----------------- Mesh Generation -----------------------
 mesh = Grid1D(nx=config.nx, Lx=L)
 
-x = mesh.cellCenters[0] # Cell position
-X = mesh.faceCenters[0] # Face position, if needed
+x = mesh.cellCenters[0]  # Cell position
+X = mesh.faceCenters[0]  # Face position, if needed
 
 
 # -------------- State Variable Declarations --------------
@@ -64,63 +64,65 @@ nu_ii = CellVariable(name=r"$\nu_{ii}$", mesh=mesh)
 nu_ai = CellVariable(name=r"$\nu_{*i}$", mesh=mesh)
 nu_ae = CellVariable(name=r"$\nu_{*e}$", mesh=mesh)
 
-## Electron Anomalous Diffusion
+# Electron Anomalous Diffusion
 D_an = CellVariable(name=r"$D_{an}$", mesh=mesh)
 g_n_an = CellVariable(name=r"$g_n^{an}$", mesh=mesh)
 g_T_an = CellVariable(name=r"$g_T^{an}$", mesh=mesh)
 g_Z_an = CellVariable(name=r"$g_Z^{an}$", mesh=mesh)
 Gamma_an = CellVariable(name=r"$\Gamma_e^{an}$", mesh=mesh)
 
-## Charge Exchange Friction
-ionization_rate = CellVariable(name=r"$\langle\sigma_{ion} v\rangle$",\
-		mesh=mesh)
-cx_rate = CellVariable(name=r"$\langle\sigma_{cx} v\rangle$",\
-		mesh=mesh)
+# Charge Exchange Friction
+ionization_rate = CellVariable(name=r"$\langle\sigma_{ion} v\rangle$",
+                               mesh=mesh)
+cx_rate = CellVariable(name=r"$\langle\sigma_{cx} v\rangle$",
+                       mesh=mesh)
 g_n_cx = CellVariable(name=r"$g_n^{cx}$", mesh=mesh)
 g_T_cx = CellVariable(name=r"$g_T^{cx}$", mesh=mesh)
 g_Z_cx = CellVariable(name=r"$g_Z^{cx}$", mesh=mesh)
 Gamma_cx = CellVariable(name=r"$\Gamma_i^{cx}$", mesh=mesh)
 
-## Ion Bulk (Parallel) Viscosity
+# Ion Bulk (Parallel) Viscosity
 plasma_disp = CellVariable(name=r"$X$", mesh=mesh)
 D_bulk = CellVariable(name=r"$D_{\pi\parallel}$", mesh=mesh)
 Gamma_bulk = CellVariable(name=r"$\Gamma_i^{\pi\parallel}$", mesh=mesh)
 
-## Ion Orbit Loss
+# Ion Orbit Loss
 g_ol = CellVariable(name=r"$g^{ol}$", mesh=mesh)
 Gamma_ol = CellVariable(name=r"$\Gamma_i^{ol}$", mesh=mesh)
 
 
-variable_dictionary = {\
-		'x': x, 'density': density, 'temperature': temperature, 'Z': Z,\
-		'Diffusivity': Diffusivity, 'n_0': n_0, 'v_Ti': v_Ti, 'v_Te': v_Te,\
-		'rho_pi': rho_pi, 'rho_pe': rho_pe, 'omega_bi': omega_bi,\
-		'omega_be': omega_be, 'w_bi': w_bi, 'omega_t': omega_t, 'nu_ei': nu_ei,
-		'nu_ii': nu_ii, 'nu_ai': nu_ai, 'nu_ae': nu_ae,\
-		'ionization_rate': ionization_rate, 'cx_rate': cx_rate,\
-		'D_an': D_an, 'g_n_an': g_n_an, 'g_T_an': g_T_an, 'g_Z_an': g_Z_an,\
-		'Gamma_an': Gamma_an, 'g_n_cx': g_n_cx, 'g_T_cx': g_T_cx,\
-		'g_Z_cx': g_Z_cx, 'Gamma_cx': Gamma_cx, 'g_ol': g_ol,\
-		'Gamma_ol': Gamma_ol, 'D_bulk': D_bulk, 'Gamma_bulk': Gamma_bulk,\
-		'plasma_disp': plasma_disp,\
-	}
+variable_dictionary = {
+        'x': x, 'density': density, 'temperature': temperature, 'Z': Z,
+        'Diffusivity': Diffusivity, 'n_0': n_0, 'v_Ti': v_Ti, 'v_Te': v_Te,
+        'rho_pi': rho_pi, 'rho_pe': rho_pe, 'omega_bi': omega_bi,
+        'omega_be': omega_be, 'w_bi': w_bi, 'omega_t': omega_t, 'nu_ei': nu_ei,
+        'nu_ii': nu_ii, 'nu_ai': nu_ai, 'nu_ae': nu_ae,
+        'ionization_rate': ionization_rate, 'cx_rate': cx_rate,
+        'D_an': D_an, 'g_n_an': g_n_an, 'g_T_an': g_T_an, 'g_Z_an': g_Z_an,
+        'Gamma_an': Gamma_an, 'g_n_cx': g_n_cx, 'g_T_cx': g_T_cx,
+        'g_Z_cx': g_Z_cx, 'Gamma_cx': Gamma_cx, 'g_ol': g_ol,
+        'Gamma_ol': Gamma_ol, 'D_bulk': D_bulk, 'Gamma_bulk': Gamma_bulk,
+        'plasma_disp': plasma_disp
+    }
 
 
 # Remove entire entry in aux plot details arrays if aux_vars is not a string
 k = 0
-while k < len(config.aux_vars) and config.aux_plots == True:
-	if config.aux_vars[k] in variable_dictionary:
-		k = k + 1
-	elif config.aux_vars[k] not in variable_dictionary:
-		del config.aux_vars[k]; del config.aux_titles[k]
-		del config.aux_ymin[k]; del config.aux_ymax[k]
+while k < len(config.aux_vars) and config.aux_plots is True:
+    if config.aux_vars[k] in variable_dictionary:
+        k = k + 1
+    elif config.aux_vars[k] not in variable_dictionary:
+        del config.aux_vars[k]
+        del config.aux_titles[k]
+        del config.aux_ymin[k]
+        del config.aux_ymax[k]
 
-del k # Cleanup
+del k  # Cleanup
 
 
 # Auxiliary function to print out any variable
 def print_variables(*args):
-	for v in args:
-		print "\n--------------------\t" +str(v.name)+ "\t--------------------"
-		print v.inBaseUnits()
-
+    for v in args:
+        print "\n--------------------\t" + str(v.name) + \
+              "\t--------------------"
+        print v.inBaseUnits()
