@@ -39,8 +39,8 @@ B = (B_phi**2 + B_theta**2)**(1.0/2.0)         # Full field, in Tesla
 # B = ( B_phi**2 + B_theta**2 )**(1.0/2.0)       # Full field
 
 
-aspect = a_m / R                                # Aspect Ratio
-q = aspect * B_phi/B_theta                      # q value
+aspect = a_m / R                               # Aspect Ratio
+q = aspect * B_phi/B_theta                     # q value
 
 
 # PRESET parameters for quick calculation, many of which are chosen by Staps
