@@ -71,7 +71,7 @@ zeta = 0.5
 
 # Choose set of parameters in the Taylor-expanded model
 # It gets defaulted to Staps' numbers.
-if config.numerical_choice.lower() is "paquay":
+if config.numerical_choice.lower() == "paquay":
     # Paquay's numbers
     c_n = 1.1
     c_T = 0.9
@@ -81,7 +81,7 @@ if config.numerical_choice.lower() is "paquay":
     Z_S = 1.4
 
 # Stap's numbers
-elif config.numerical_choice.lower() is "staps":
+elif config.numerical_choice.lower() == "staps":
     c_n = -1.1
     c_T = -0.9
     a = 3.0 / 2.0
