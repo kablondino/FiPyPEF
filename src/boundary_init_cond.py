@@ -8,7 +8,7 @@
     The edge boundary for Z may need consideration.
 """
 
-from variable_decl import *
+from src.variable_decl import *
 
 
 # ---------------- Set Initial Conditions -----------------

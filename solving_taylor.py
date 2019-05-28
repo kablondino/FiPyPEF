@@ -4,8 +4,8 @@
 """
 # Order of file imports from the following inport: input_handling.py,
 # parameters.py, variable_decl.py boundary_init_cond
-from boundary_init_cond import *
-from calculate_coeffs import *
+from src.boundary_init_cond import *
+from src.calculate_coeffs import *
 # fipy.tools.numerix and dump is also imported from the above
 
 from fipy import TransientTerm, DiffusionTerm, Viewer, TSVViewer

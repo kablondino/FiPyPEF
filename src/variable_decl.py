@@ -10,7 +10,7 @@
 from fipy import Grid1D, CellVariable
 from fipy.tools import numerix, dump
 
-from parameters import *
+from src.parameters import *
 
 
 # ----------------- Mesh Generation -----------------------

@@ -5,7 +5,7 @@
     the solving loop.
 """
 
-from variable_decl import *
+from src.variable_decl import *
 
 import scipy.special        # For the Faddeeva (plasma dispersion) function
 import numpy

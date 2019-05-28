@@ -5,7 +5,7 @@
     constants. The units are usually in base SI
 """
 
-from input_handling import *
+from src.input_handling import *
 from scipy import constants
 
 
