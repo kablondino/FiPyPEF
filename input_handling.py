@@ -106,8 +106,8 @@ if (getattr(config, 'D_choice', "").lower() not in diffusivity_models or
         type(getattr(config, 'D_choice', None)) != str):
     try:
         config.D_choice = input("The diffusivity model is not properly "
-                                    "chosen. Choose from the following: Zohm, "
-                                    "Weymiens_L, Staps, Flow-Shear -> ")
+                                "chosen. Choose from the following: Zohm, "
+                                "Weymiens_L, Staps, Flow-Shear -> ")
 
         if str(config.D_choice).lower() not in diffusivity_models:
             raise IndexError()
@@ -160,7 +160,7 @@ if (config.D_choice.lower() == "d_shear" or
                 = float(input("One of the parameters of the flow-shear "
                               "diffusivity model is improperly set. Enter 3 "
                               "floating-point numbers, separated by commas: "
-                        ).split(","))
+                              ).split(","))
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.shear_a1, config.shear_a2, config.shear_a3 = 1.0, 0.0, 0.5
