@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
     This file sets the equation system and does the solving
     and viewing of the full flux model.
@@ -60,7 +59,7 @@ if __name__ == '__main__':
                              datamin=0.0, datamax=None, legend='best')
         ZD_viewer = Viewer((Z, Diffusivity), xmin=0.0, xmax=L, datamin=0.0,
                            datamax=None, legend='best')
-        raw_input("Pause for Viewing Initial Conditions")
+        input("Pause for Viewing Initial Conditions")
 
         # Auxiliary viewers
         if config.aux_plots is True:

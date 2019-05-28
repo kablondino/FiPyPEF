@@ -54,20 +54,20 @@ diffusivity_models = ["d_zohm", "zohm", "d_staps", "staps", "d_shear",
 # Z-equation model choice
 if type(getattr(config, 'taylor_model', None)) != bool:
     config.taylor_Z_model = True
-    print "Defaulted to using the Taylor-expanded numerical model for Z."
+    print("Defaulted to using the Taylor-expanded numerical model for Z.")
 
 
 # Initial starting mode
 if type(getattr(config, 'initial_H_mode', None)) != bool:
     config.initial_H_mode = False
-    print "Defaulted to starting in L--mode."
+    print("Defaulted to starting in L--mode.")
 
 
 # What initial condition should be used?
 if type(getattr(config, 'paquay_init_conds', None)) != bool:
     config.paquay_init_conds = True
-    print "The initial conditions are set to Paquay's form."
-    raw_input("BREAK!")
+    print("The initial conditions are set to Paquay's form.")
+    input("BREAK!")
 
 
 # -------------- Numerical Choices ------------------------
@@ -80,7 +80,7 @@ if (type(getattr(config, 'Gamma_c', None)) != float and
                                    "floating-point value: "))
     except (EOFError, NameError, SyntaxError) as e:
         config.Gamma_c = -4.0 / 5.0
-        print "Gamma_c defaulted to -0.8"
+        print("Gamma_c defaulted to -0.8")
 
 if (type(getattr(config, 'q_c', None)) != float and
         type(getattr(config, 'Gamma_c', None)) != int):
@@ -90,14 +90,14 @@ if (type(getattr(config, 'q_c', None)) != float and
                                    "value: "))
     except (EOFError, NameError, SyntaxError) as e:
         config.q_c = config.Gamma_c * 5.0
-        print "q_c defaulted to 5.0 * Gamma_c"
+        print("q_c defaulted to 5.0 * Gamma_c")
 
 
 # Check the choice for numerical parameters
 if (getattr(config, 'numerical_choice', "").lower() not in parameter_sets or
         type(getattr(config, 'numerical_choice', None)) != str):
     config.numerical_choice = "Staps"
-    print "Numerical choice defaulted to Staps' set."
+    print("Numerical choice defaulted to Staps' set.")
 
 
 # ---------------- Diffusivity Options -------------------
@@ -105,7 +105,7 @@ if (getattr(config, 'numerical_choice', "").lower() not in parameter_sets or
 if (getattr(config, 'D_choice', "").lower() not in diffusivity_models or
         type(getattr(config, 'D_choice', None)) != str):
     try:
-        config.D_choice = raw_input("The diffusivity model is not properly "
+        config.D_choice = input("The diffusivity model is not properly "
                                     "chosen. Choose from the following: Zohm, "
                                     "Weymiens_L, Staps, Flow-Shear -> ")
 
@@ -114,7 +114,7 @@ if (getattr(config, 'D_choice', "").lower() not in diffusivity_models or
 
     except (IndexError, EOFError):
         config.D_choice = "d_staps"
-        print "Diffusivity model defaulted to Staps'."
+        print("Diffusivity model defaulted to Staps'.")
 
 
 # Diffusivity parameters, i.e. coefficients
@@ -128,8 +128,8 @@ if config.D_choice.lower() == "d_staps":
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.alpha_sup = 0.5
-            print "The suppression coefficient in the diffusivity is " \
-                  "defaulted to 0.5"
+            print("The suppression coefficient in the diffusivity is "
+                  "defaulted to 0.5")
 
     if (type(getattr(config, 'beta', None)) != int and
             type(getattr(config, 'beta', None)) != float):
@@ -140,8 +140,8 @@ if config.D_choice.lower() == "d_staps":
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.beta = 2.0
-            print "The exponent of the electric field shear in the " \
-                  "diffusivity is defaulted to 2.0."
+            print("The exponent of the electric field shear in the "
+                  "diffusivity is defaulted to 2.0.")
 
 
 if (config.D_choice.lower() == "d_shear" or
@@ -164,8 +164,8 @@ if (config.D_choice.lower() == "d_shear" or
 
         except (NameError, SyntaxError, EOFError, ValueError):
             config.shear_a1, config.shear_a2, config.shear_a3 = 1.0, 0.0, 0.5
-            print "The parameters for the flow-shear diffusivity are " \
-                  "defaulted to a1 = 1.0, a2 = 0.0, and a3 = 0.5."
+            print("The parameters for the flow-shear diffusivity are "
+                  "defaulted to a1 = 1.0, a2 = 0.0, and a3 = 0.5.")
 
 
 # ----------------- Solver-specific Choices ---------------
@@ -180,11 +180,11 @@ if ((type(getattr(config, 'nx', None)) != int and
         if config.nx <= 0:
             raise ValueError
 
-        print "nx set to " + str(config.nx)
+        print("nx set to " + str(config.nx))
 
     except (EOFError, NameError, SyntaxError, ValueError) as e:
         config.nx = 100
-        print "nx defaulted to 100."
+        print("nx defaulted to 100.")
 
 if type(config.nx) == float:
     config.nx = int(config.nx)
@@ -224,11 +224,11 @@ if ((type(getattr(config, 'total_timeSteps', None)) != int and
         if config.total_timeSteps <= 0:
             raise ValueError
 
-        print "Total # of time steps set to " + str(config.total_timeSteps)
+        print("Total # of time steps set to " + str(config.total_timeSteps))
 
     except (NameError, SyntaxError, EOFError, ValueError):
         config.total_timeSteps = 100
-        print "Total time steps defaulted to 100."
+        print("Total time steps defaulted to 100.")
 
 if type(config.total_timeSteps) == float:
     config.total_timeSteps = int(config.total_timeSteps)
@@ -245,15 +245,15 @@ if ((type(getattr(config, 'timeStep', None)) != float and
         if config.timeStep <= 0.0:
             raise ValueError
 
-        print "The time step size is set to " + str(config.timeStep)
+        print("The time step size is set to " + str(config.timeStep))
 
     except (NameError, SyntaxError, EOFError, ValueError):
         if config.taylor_model is True:
             config.timeStep = 1.0 / 375.0
-            print "The time step is defaulted to 1.0 / 375.0."
+            print("The time step is defaulted to 1.0 / 375.0.")
         elif config.taylor_model is False:
             config.timeStep = 1.0e-8
-            print "The time step is defaulted to 1.0e-9."
+            print("The time step is defaulted to 1.0e-9.")
 
 if type(config.timeStep) is int:
     config.timeStep = float(config.timeStep)
@@ -274,10 +274,10 @@ if ((type(getattr(config, 'res_tol', None)) != float and
     except (NameError, SyntaxError, EOFError, ValueError):
         if config.taylor_model is True:
             config.res_tol = 1.0e-6
-            print "The residual tolerance is defaulted to 1.0e-6."
+            print("The residual tolerance is defaulted to 1.0e-6.")
         elif config.taylor_model is False:
             config.res_tol = 1.0e14
-            print "The residual tolerance is defaulted to 1.0e14."
+            print("The residual tolerance is defaulted to 1.0e14.")
 
 if type(config.res_tol) == int:
     config.res_tol = float(config.res_tol)
@@ -287,7 +287,7 @@ if type(config.res_tol) == int:
 # Generation of plots
 if type(getattr(config, 'generate_plots', None)) != bool:
     config.generate_plots = False
-    print "NOTE! The plots are NOT going to be generated."
+    print("NOTE! The plots are NOT going to be generated.")
 
 
 # Plot title

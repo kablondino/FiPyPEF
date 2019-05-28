@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
     This file sets the equation system and does the solving
     and viewing of the Taylor-expanded model.
@@ -54,7 +53,7 @@ if __name__ == '__main__':
                         xmin=0.0, xmax=L, datamin=-0.2,
                         datamax=config.ploty_max, legend='best',
                         title=config.plot_title)
-        raw_input("Pause for Viewing Initial Conditions")
+        input("Pause for Viewing Initial Conditions")
 
         # Auxiliary viewers
         if config.aux_plots is True:
@@ -66,7 +65,7 @@ if __name__ == '__main__':
                             datamin=config.aux_ymin[k],
                             datamax=config.aux_ymax[k], legend='best',
                             title=config.aux_titles[k]))
-            raw_input("Pause for Viewing Initial Auxiliary Plots")
+            input("Pause for Viewing Initial Auxiliary Plots")
 
     # File writing
     if (hasattr(config, 'save_directory') and
@@ -74,9 +73,9 @@ if __name__ == '__main__':
              getattr(config, 'save_TSVs', False) is True)):
         if not os.path.exists(os.getcwd() + str("/") + config.save_directory):
             os.makedirs(os.getcwd() + str("/") + config.save_directory)
-            print "Directory created: " + str(config.save_directory)
+            print("Directory created: " + str(config.save_directory))
         copyfile(config_file, config.save_directory + "/" + config_file)
-        raw_input("Pause set for writing to file...")
+        input("Pause set for writing to file...")
 
     # ----------------- Time Loop -------------------------
     for t in range(config.total_timeSteps):
@@ -92,7 +91,7 @@ if __name__ == '__main__':
 
         # --------------- Solving Loop --------------------
         while current_residual > config.res_tol:
-            print t, current_residual
+            print(t, current_residual)
             current_residual = full_equation.sweep(dt=config.timeStep,
                                                    solver=GMRES_Solver)
 
@@ -124,5 +123,5 @@ if __name__ == '__main__':
                 .plot(filename=config.save_directory + "/"
                       + str(t).zfill(4) + ".tsv")
 
-    raw_input(" <=============== End of Program. Press any key to continue. "
+    input(" <=============== End of Program. Press any key to continue. "
               "===============> ")

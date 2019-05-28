@@ -89,10 +89,10 @@ elif (config.D_choice.lower() == "d_weymiens_l" or config.D_choice.lower()
         * (1 - config.alpha_sup * numerix.dot(Z.grad, Z.grad))
 
 else:
-    print "Something went horribly wrong in choosing the Diffusivity model."
+    print("Something went horribly wrong in choosing the Diffusivity model.")
 
 Diffusivity.setValue(D_choice_local)
-print "The diffusivity is set to " + str(config.D_choice)
+print("The diffusivity is set to " + str(config.D_choice))
 
 # ---------------------------------------------------------
 # The old initial conditions by Paquay 2012. It requires the Diffusivity

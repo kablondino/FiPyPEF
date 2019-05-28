@@ -123,6 +123,6 @@ del k  # Cleanup
 # Auxiliary function to print out any variable
 def print_variables(*args):
     for v in args:
-        print "\n--------------------\t" + str(v.name) + \
-              "\t--------------------"
-        print v.inBaseUnits()
+        print("\n--------------------\t" + str(v.name) +
+              "\t--------------------")
+        print(v.inBaseUnits())
