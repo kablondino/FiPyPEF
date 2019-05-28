@@ -1,13 +1,13 @@
 # FiPyPEF: FiPy Plasma Edge Fluxes
 
 ## Requirements and Installation
-* Python2
+* Python3
 * [FiPy](https://www.ctcms.nist.gov/fipy/ "FiPy Homepage")
 
 It is recommended to use the [Anaconda](https://www.anaconda.com/download/ "Download Anaconda") package management system included in Anaconda.
 It handles the additional required packages needed by FiPy, such as numpy and scipy.
 For a more-minimal approach, use only the package manager [conda](https://conda.io/miniconda.html "Download Miniconda").
-Make sure you download the Python2 version.
+Make sure you download the Python3 version.
 
 Upon completing the installation of conda, follow the instructions from FiPy to install the software:
 [Installation Instructions](https://www.ctcms.nist.gov/fipy/INSTALLATION.html "Instructions")
