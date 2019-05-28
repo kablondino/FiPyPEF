@@ -11,13 +11,20 @@ Make sure you download the Python3 version.
 
 Upon completing the installation of conda, follow the instructions from FiPy to install the software:
 [Installation Instructions](https://www.ctcms.nist.gov/fipy/INSTALLATION.html "Instructions")
-
-Be sure to test the installation as well.
+Currently, the command to install the environment is this:
+```
+conda install --name NAME --channel conda-forge python=3.6 fipy
+```
 
 Please use git to manage any updates.
 In order to get this code, simply execute the following command in the location of your choice.
 ```
 git clone https://github.com/kablondino/FiPyPEF.git
+```
+Don't forget to activate your conda environment!
+Substitute the name that you gave it.
+```
+conda activate NAME
 ```
 
 It has not been tested in the [Jupyter notebook](http://jupyter.org/ "Jupyter").
