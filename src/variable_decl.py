@@ -1,15 +1,14 @@
 """
-    This file generates the 1D mesh and the 4 cell
-    state variables needed for the model (including Diffusivity).
+    This file generates the 1D mesh and the 4 cell state variables needed for
+    the model (including Diffusivity).
 
-    **It may be that Diffusivity should be declared as a FaceVariable.
-    It must be adjusted to the correct size when using it to calculate
-    different values.**
+    **It may be that Diffusivity should be declared as a FaceVariable.  It
+    must be adjusted to the correct size when using it to calculate different
+    values.**
 """
 
 from fipy import Grid1D, CellVariable
 from fipy.tools import numerix, dump
-
 from src.parameters import *
 
 

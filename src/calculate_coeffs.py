@@ -1,8 +1,7 @@
 """
-    This file contains the $g$ coefficients and plasma
-    parameters for use in the full flux model $Z$ equation.
-    It has been written as a function as to be called within
-    the solving loop.
+    This file contains the $g$ coefficients and plasma parameters for use in
+    the full flux model $Z$ equation. It has been written as a function as to
+    be called within the solving loop.
 """
 
 from src.variable_decl import *

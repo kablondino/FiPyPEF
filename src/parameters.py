@@ -1,8 +1,7 @@
 """
-    This file contains the simple constant delcarations
-    for use in the PDE system. This includes machine
-    parameters, length scales, and global physical/math
-    constants. The units are usually in base SI
+    This file contains the simple constant delcarations for use in the PDE
+    system. This includes machine parameters, length scales, and global
+    physical/math constants. The units are usually in base SI.
 """
 
 from src.input_handling import *
