@@ -5,14 +5,14 @@
     nx:                int    The number of grid points
     total_timeSteps:   int    The total number of time steps
     timeStep:          float  The overall dt in solving
-    res_tol            float  The tolerance of the residual
-    Gamma_c            float  The particle flux from the core
-    q_c                float  The heat flux from the core
-    alpha_sup          float  Suppression coeff in Stap's diffusivity
-    beta               float  Exponent value in Stap's diffusivity
-    shear_a1           float  The a1 coefficient in the Flow-Shear diffusivity
-    shear_a2           float  ... a2 .........................................
-    shear_a3           float  ... a3 .........................................
+    res_tol:           float  The tolerance of the residual
+    Gamma_c:           float  The particle flux from the core
+    q_c:               float  The heat flux from the core
+    alpha_sup:         float  Suppression coeff in Stap's diffusivity
+    beta:              float  Exponent value in Stap's diffusivity
+    shear_a1:          float  The a1 coefficient in the Flow-Shear diffusivity
+    shear_a2:          float  ... a2 .........................................
+    shear_a3:          float  ... a3 .........................................
     numerical_choice:  str    The set of predetermined parameters
     D_choice:          str    The model of the diffusivity
     paquay_init_conds: bool   Start w/ Paquay's initial conditions?
@@ -33,12 +33,13 @@
 
     Each possible input also has a default value, if nothing is set.
 
-    NOTE that the auxiliary variables 'aux_vars' is only checked for
-    variable type (list of strings) in this file. The
-    validity of the contents is checked in the solving file.
+    NOTE that the auxiliary variables 'aux_vars' is only checked for variable
+    type (list of strings) in this file. The validity of the contents is
+    checked in the solving file.
 """
 
 import sys
+
 
 # Import variables from job configuration file, as cmd line argument
 config = __import__(sys.argv[1].replace('.py', ''))
@@ -261,7 +262,7 @@ if type(config.timeStep) is int:
 
 # Residual tolerance
 if ((type(getattr(config, 'res_tol', None)) != float and
-        type(getattr(config, 'res_tol', Non)) != int) or
+        type(getattr(config, 'res_tol', None)) != int) or
         getattr(config, 'res_tol', None) <= 0.0):
     try:
         config.res_tol = float(input("The residual tolerance is not properly "
