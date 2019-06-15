@@ -2,8 +2,8 @@
     This file sets the equation system and does the solving
     and viewing of the Taylor-expanded model.
 """
-# Order of file imports from the following inport: input_handling.py,
-# parameters.py, variable_decl.py boundary_init_cond
+# Order of file imports from the following import: input_handling.py,
+# parameters.py, variable_decl.py, boundary_init_cond
 from src.boundary_init_cond import *
 from src.calculate_coeffs import *
 # fipy.tools.numerix and dump is also imported from the above
@@ -11,7 +11,7 @@ from src.calculate_coeffs import *
 from fipy import TransientTerm, DiffusionTerm, Viewer, TSVViewer
 from fipy.solvers import *
 
-import os    # For saving files to a specified directory
+import os  # For saving files to a specified directory
 from shutil import copyfile
 
 
